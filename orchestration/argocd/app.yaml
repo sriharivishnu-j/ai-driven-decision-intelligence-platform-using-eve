@@ -1,0 +1,13 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ai-decision-platform
+spec:
+  destination:
+    namespace: default
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: 'orchestration/helm'
+    repoURL: 'https://github.com/your-repo.git'
+    targetRevision: HEAD
+  project: default
